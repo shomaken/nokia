@@ -6,6 +6,7 @@
 }
 
 :root {
+    /* Nokia Brand Colors - Professional Palette */
     --nokia-blue: #124191;
     --nokia-light-blue: #1e5bb8;
     --nokia-dark-blue: #0a2c5e;
@@ -16,30 +17,153 @@
     --nokia-white: #ffffff;
     --nokia-light-gray: #f8f9fa;
     --nokia-gray: #6c757d;
-    --nokia-dark: #212529;
+    --nokia-dark: #1a1d23;
+    --nokia-darker: #0d1117;
+    
+    /* Professional Color Extensions */
+    --surface-primary: #ffffff;
+    --surface-secondary: #f8fafc;
+    --surface-tertiary: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-tertiary: #64748b;
+    --accent-glow: rgba(0, 212, 255, 0.15);
+    
+    /* Enhanced Gradients */
     --gradient-primary: linear-gradient(135deg, var(--nokia-blue) 0%, var(--nokia-light-blue) 50%, var(--nokia-cyan) 100%);
     --gradient-secondary: linear-gradient(135deg, var(--nokia-cyan) 0%, var(--nokia-green) 100%);
     --gradient-accent: linear-gradient(135deg, var(--nokia-yellow) 0%, #ffd700 100%);
-    --shadow-soft: 0 10px 40px rgba(18, 65, 145, 0.15);
-    --shadow-strong: 0 20px 60px rgba(18, 65, 145, 0.25);
-    --border-radius: 20px;
-    --border-radius-small: 12px;
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-surface: linear-gradient(135deg, var(--surface-primary) 0%, var(--surface-secondary) 100%);
+    --gradient-text: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    
+    /* Professional Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-nokia: 0 25px 50px -12px rgba(18, 65, 145, 0.25);
+    --shadow-glow: 0 0 20px var(--accent-glow);
+    
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    --font-size-7xl: 4.5rem;
+    
+    /* Spacing Scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    
+    /* Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-3xl: 32px;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     line-height: 1.6;
-    color: var(--nokia-dark);
+    color: var(--text-primary);
+    background: var(--surface-primary);
     overflow-x: hidden;
-    background: var(--nokia-white);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--space-6);
 }
+
+/* Professional Typography System */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+h1 { font-size: var(--font-size-6xl); }
+h2 { font-size: var(--font-size-5xl); }
+h3 { font-size: var(--font-size-4xl); }
+h4 { font-size: var(--font-size-3xl); }
+h5 { font-size: var(--font-size-2xl); }
+h6 { font-size: var(--font-size-xl); }
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.text-large {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+}
+
+.text-small {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+}
+
+/* Utility Classes */
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-white { color: var(--nokia-white); }
+.text-nokia { color: var(--nokia-blue); }
+.text-cyan { color: var(--nokia-cyan); }
 
 /* Interactive Background Canvas */
 #background-canvas {
@@ -52,29 +176,30 @@ body {
     opacity: 0.8;
 }
 
-/* Navigation */
+/* Professional Navigation */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     z-index: 1000;
-    padding: 1rem 0;
-    transition: var(--transition);
-    border-bottom: 1px solid rgba(18, 65, 145, 0.1);
+    padding: var(--space-4) 0;
+    transition: var(--transition-base);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-soft);
+    background: rgba(248, 250, 252, 0.95);
+    box-shadow: var(--shadow-lg);
+    border-bottom-color: rgba(226, 232, 240, 0.8);
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--space-6);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,94 +208,125 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1.75rem;
-    font-weight: 800;
+    gap: var(--space-3);
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
     color: var(--nokia-blue);
     text-decoration: none;
-    transition: var(--transition);
+    transition: var(--transition-bounce);
+    position: relative;
 }
 
 .nav-logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+}
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transform: scaleX(0);
+    transition: var(--transition-base);
+}
+
+.nav-logo:hover::after {
+    transform: scaleX(1);
 }
 
 .nav-logo i {
-    font-size: 2.2rem;
+    font-size: var(--font-size-3xl);
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: pulse-icon 2s ease-in-out infinite;
+    animation: logo-pulse 3s ease-in-out infinite;
 }
 
-@keyframes pulse-icon {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+@keyframes logo-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    50% { 
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+    }
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: var(--space-1);
     align-items: center;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--nokia-dark);
+    color: var(--text-primary);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     position: relative;
-    transition: var(--transition);
-    padding: 8px 16px;
-    border-radius: var(--border-radius-small);
+    transition: var(--transition-base);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    letter-spacing: -0.01em;
 }
 
 .nav-menu a::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
+    inset: 0;
     background: var(--gradient-primary);
-    transition: var(--transition);
-    transform: translateX(-50%);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    transition: var(--transition-base);
+    z-index: -1;
 }
 
 .nav-menu a:hover {
-    color: var(--nokia-blue);
-    background: rgba(18, 65, 145, 0.05);
+    color: var(--nokia-white);
+    transform: translateY(-1px);
 }
 
 .nav-menu a:hover::before {
-    width: 80%;
+    opacity: 1;
+}
+
+.nav-menu a:active {
+    transform: translateY(0);
 }
 
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 8px;
-    border-radius: var(--border-radius-small);
-    transition: var(--transition);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+    background: transparent;
+    border: 1px solid transparent;
 }
 
 .hamburger:hover {
-    background: rgba(18, 65, 145, 0.1);
+    background: var(--accent-glow);
+    border-color: rgba(18, 65, 145, 0.1);
 }
 
 .hamburger span {
-    width: 28px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     background: var(--nokia-blue);
-    margin: 3px 0;
-    transition: var(--transition);
-    border-radius: 2px;
+    margin: 2px 0;
+    transition: var(--transition-base);
+    border-radius: var(--radius-full);
 }
 
-/* Hero Section */
+/* Professional Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -183,22 +339,22 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    inset: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 237, 0, 0.1) 0%, transparent 50%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     z-index: 1;
 }
 
 .hero-content {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 6rem;
+    gap: var(--space-20);
     align-items: center;
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: var(--space-24) var(--space-6);
     position: relative;
     z-index: 2;
 }
@@ -208,11 +364,11 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(var(--font-size-5xl), 8vw, var(--font-size-7xl));
     font-weight: 900;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .gradient-text {
@@ -221,83 +377,125 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
-    animation: gradient-shift 3s ease-in-out infinite;
+    animation: gradient-flow 4s ease-in-out infinite;
+    position: relative;
 }
 
-@keyframes gradient-shift {
-    0%, 100% { filter: hue-rotate(0deg); }
-    50% { filter: hue-rotate(20deg); }
+.gradient-text::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    animation: gradient-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gradient-flow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: hue-rotate(15deg);
+    }
+}
+
+@keyframes gradient-pulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.3; }
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-10);
     opacity: 0.95;
-    font-weight: 400;
-    max-width: 600px;
-    line-height: 1.4;
+    font-weight: 500;
+    max-width: 640px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: var(--space-4);
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: var(--space-12);
 }
 
+/* Professional Button System */
 .btn {
-    padding: 16px 32px;
-    border-radius: 50px;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-xl);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: var(--transition);
+    font-size: var(--font-size-base);
+    transition: var(--transition-base);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 .btn::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: var(--transition);
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: var(--transition-base);
 }
 
 .btn:hover::before {
-    left: 100%;
+    transform: translateX(100%);
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
 
 .btn-primary {
     background: var(--gradient-accent);
-    color: var(--nokia-dark);
-    box-shadow: 0 8px 25px rgba(255, 237, 0, 0.3);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-lg), 0 0 0 0 rgba(255, 237, 0, 0.5);
+    border-color: transparent;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(255, 237, 0, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2xl), 0 0 20px rgba(255, 237, 0, 0.4);
+}
+
+.btn-primary:focus {
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(255, 237, 0, 0.3);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     color: var(--nokia-white);
-    border-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--nokia-white);
-    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .hero-image {
@@ -307,74 +505,461 @@ body {
     position: relative;
 }
 
-.phone-container {
-    width: 280px;
-    height: 420px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border-radius: 30px;
-    padding: 25px;
-    box-shadow: var(--shadow-strong);
+/* Professional Phone Design */
+.phone-device {
     position: relative;
-    animation: phone-float 6s ease-in-out infinite;
-    transition: var(--transition);
+    filter: drop-shadow(0 25px 50px rgba(18, 65, 145, 0.3));
 }
 
-.phone-container::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: var(--gradient-secondary);
-    border-radius: 32px;
-    z-index: -1;
-    opacity: 0;
-    transition: var(--transition);
+.phone-frame {
+    width: 380px;
+    height: 720px;
+    background: linear-gradient(145deg, #1a1d23 0%, #0f1216 100%);
+    border-radius: var(--radius-3xl);
+    padding: 14px;
+    position: relative;
+    animation: phone-float 10s ease-in-out infinite;
+    transition: var(--transition-slow);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.05),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+        var(--shadow-2xl),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
-.phone-container:hover::before {
-    opacity: 1;
-}
-
-.phone-container:hover {
-    transform: scale(1.05) rotate(2deg);
+.phone-frame:hover {
+    transform: scale(1.01) rotateY(2deg) rotateX(1deg);
+    filter: drop-shadow(0 40px 80px rgba(18, 65, 145, 0.3));
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.08),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        0 50px 100px -20px rgba(18, 65, 145, 0.4),
+        0 0 0 1px rgba(0, 212, 255, 0.1);
 }
 
 .phone-screen {
     width: 100%;
-    height: 100%;
-    background: var(--gradient-primary);
-    border-radius: 20px;
+    height: 88%;
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+    border-radius: var(--radius-3xl);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.03),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.screen-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transition: var(--transition-base);
+}
+
+.phone-status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space-4);
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 4;
+    font-weight: 600;
+}
+
+.signal-bars {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+}
+
+.signal-bars span {
+    width: 3px;
+    background: var(--nokia-white);
+    border-radius: 1px;
+    opacity: 0.8;
+}
+
+.signal-bars span:nth-child(1) { height: 4px; }
+.signal-bars span:nth-child(2) { height: 6px; }
+.signal-bars span:nth-child(3) { height: 8px; }
+.signal-bars span:nth-child(4) { height: 10px; }
+
+.battery-indicator {
+    font-size: 0.8rem;
+    color: var(--nokia-green);
+}
+
+.screen-off-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse at center, rgba(26, 29, 35, 0.6) 0%, rgba(0, 0, 0, 0.9) 70%),
+        linear-gradient(135deg, rgba(18, 65, 145, 0.02) 0%, transparent 50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--nokia-white);
-    font-size: 2rem;
-    font-weight: 800;
+    transition: var(--transition-slow);
+    z-index: 2;
+    backdrop-filter: blur(1px);
+}
+
+.screen-off-overlay.hidden {
+    opacity: 0;
+    transform: scale(0.98);
+    backdrop-filter: blur(0px);
+}
+
+.nokia-reflection {
+    width: 120px;
+    height: 24px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 20%,
+        rgba(0, 212, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.04) 80%,
+        transparent 100%
+    );
+    border-radius: var(--radius-xl);
+    animation: screen-reflection 6s ease-in-out infinite;
+    filter: blur(0.5px);
+}
+
+@keyframes screen-reflection {
+    0%, 100% { 
+        transform: translateX(-80px) rotate(-15deg) scale(0.8);
+        opacity: 0;
+    }
+    50% { 
+        transform: translateX(80px) rotate(-15deg) scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Professional Loading Screen */
+.loading-screen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #000000 0%, #1a1d23 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-slow);
+    border-radius: var(--radius-3xl);
+}
+
+.loading-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: center;
+    animation: loading-fade-in 0.8s ease-out;
+}
+
+.nokia-boot-logo {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.1em;
+    animation: logo-boot-glow 2s ease-in-out infinite;
+}
+
+.loading-spinner {
     position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.spinner-ring {
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin-ring 1.5s linear infinite;
+}
+
+.spinner-ring:nth-child(1) {
+    border-top-color: var(--nokia-cyan);
+    animation-delay: 0s;
+}
+
+.spinner-ring:nth-child(2) {
+    border-right-color: var(--nokia-blue);
+    animation-delay: -0.5s;
+    transform: scale(0.8);
+}
+
+.spinner-ring:nth-child(3) {
+    border-bottom-color: var(--nokia-yellow);
+    animation-delay: -1s;
+    transform: scale(0.6);
+}
+
+.loading-text {
+    color: var(--nokia-white);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    opacity: 0.9;
+    animation: text-pulse 2s ease-in-out infinite;
+}
+
+.loading-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
     overflow: hidden;
 }
 
-.phone-screen::before {
-    content: '';
+.progress-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transform: translateX(-100%);
+    animation: progress-fill 2.8s ease-out;
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+/* Loading Animations */
+@keyframes loading-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logo-boot-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes spin-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes text-pulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes progress-fill {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Nokia Video Integration */
+#nokia-video {
     position: absolute;
-    top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-3xl);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: var(--transition-base);
+    z-index: 1;
+    cursor: pointer;
+    /* Mobile-specific video optimizations */
+    -webkit-playsinline: playsinline;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#nokia-video.playing {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Phone Hardware Elements */
+.phone-speaker {
+    position: absolute;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: rgba(255, 255, 255, 0.3);
+    background: #333;
     border-radius: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
-.nokia-logo {
-    letter-spacing: 2px;
+.phone-camera {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #1a1a1a 30%, #000 70%);
+    border-radius: 50%;
+    border: 1px solid #333;
+    box-shadow: 
+        inset 0 1px 2px rgba(0,0,0,0.3),
+        0 1px 0 rgba(255,255,255,0.1);
+}
+
+.phone-camera::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #0066ff 0%, #000 70%);
+    border-radius: 50%;
+}
+
+.phone-home-button {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(145deg, #2a2f36 0%, #1a1d23 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.06),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+        var(--shadow-lg),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.phone-home-button:hover {
+    transform: translateX(-50%) scale(1.08);
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.5),
+        var(--shadow-xl),
+        0 0 20px rgba(18, 65, 145, 0.2);
+}
+
+.phone-home-button:active {
+    transform: translateX(-50%) scale(0.96);
+    box-shadow: 
+        inset 0 1px 3px rgba(255, 255, 255, 0.08),
+        inset 0 -1px 3px rgba(0, 0, 0, 0.3),
+        var(--shadow-md);
+}
+
+.home-button-ring {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-xl);
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.home-button-ring::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.phone-home-button:hover .home-button-ring::before {
+    opacity: 1;
+}
+
+.phone-home-button.powered-on .home-button-ring {
+    border-color: var(--nokia-cyan);
+    color: var(--nokia-cyan);
+    box-shadow: 
+        0 0 15px rgba(0, 212, 255, 0.4),
+        inset 0 0 15px rgba(0, 212, 255, 0.1);
+    animation: power-ring-pulse 3s ease-in-out infinite;
+}
+
+.phone-home-button.powered-on .home-button-ring i {
+    animation: power-icon-glow 1.2s ease-in-out;
+    color: var(--nokia-cyan);
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+}
+
+@keyframes power-ring-pulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 10px rgba(0, 212, 255, 0.3),
+            inset 0 0 10px rgba(0, 212, 255, 0.1);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 20px rgba(0, 212, 255, 0.6),
+            inset 0 0 15px rgba(0, 212, 255, 0.2);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes power-icon-glow {
+    0% { 
+        text-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+        transform: scale(1.1);
+    }
+    100% { 
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        transform: scale(1);
+    }
 }
 
 @keyframes phone-float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(1deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
 }
 
 /* Floating Elements */
@@ -1256,6 +1841,470 @@ html {
 *:focus {
     outline: 2px solid var(--nokia-cyan);
     outline-offset: 2px;
+}
+
+/* Professional Hero Stats */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--space-5);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-2xl);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: var(--transition-bounce);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-item:hover::before {
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+    color: var(--nokia-yellow);
+    margin-bottom: var(--space-2);
+    display: block;
+    line-height: 1;
+    animation: stat-glow 3s ease-in-out infinite;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes stat-glow {
+    0%, 100% { 
+        text-shadow: 0 0 8px rgba(255, 237, 0, 0.4);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 16px rgba(255, 237, 0, 0.6);
+        transform: scale(1.02);
+    }
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.float-icon {
+    position: absolute;
+    font-size: 2rem;
+    animation: float-icon 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.float-icon:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: var(--delay);
+}
+
+.float-icon:nth-child(2) {
+    top: 40%;
+    right: 15%;
+    animation-delay: var(--delay);
+}
+
+.float-icon:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: var(--delay);
+}
+
+.float-icon:nth-child(4) {
+    top: 60%;
+    right: 25%;
+    animation-delay: var(--delay);
+}
+
+@keyframes float-icon {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Additional shapes */
+.shape-4 {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 5%;
+    animation-delay: 1s;
+}
+
+.shape-5 {
+    width: 140px;
+    height: 140px;
+    bottom: 10%;
+    right: 30%;
+    animation-delay: 5s;
+}
+
+/* Connecting People in phone */
+.connecting-people {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Card Highlights */
+.card-highlight {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-accent);
+    color: var(--nokia-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.why-card:hover .card-highlight {
+    opacity: 1;
+    bottom: -5px;
+}
+
+/* Market Share Indicators */
+.market-share {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(18, 65, 145, 0.1);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--nokia-blue);
+    border: 1px solid rgba(18, 65, 145, 0.2);
+}
+
+.nokia-card .market-share {
+    background: rgba(255, 237, 0, 0.2);
+    color: var(--nokia-yellow);
+    border-color: rgba(255, 237, 0, 0.3);
+}
+
+/* Support Quote */
+.support-quote {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--nokia-yellow);
+}
+
+.support-quote blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    position: relative;
+}
+
+.support-quote blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--nokia-yellow);
+    position: absolute;
+    left: -1rem;
+    top: -1rem;
+    line-height: 1;
+}
+
+/* Community Stats */
+.community-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.community-stats .stat {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-small);
+    backdrop-filter: blur(10px);
+    min-width: 100px;
+}
+
+.community-stats .stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--nokia-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.community-stats .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer Enhancements */
+.footer-motto {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--nokia-cyan);
+}
+
+.newsletter {
+    margin-top: 1rem;
+}
+
+.newsletter p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--nokia-gray);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-small);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--nokia-white);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--nokia-cyan);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-form button {
+    padding: 0.75rem;
+    min-width: auto;
+    width: 45px;
+    justify-content: center;
+}
+
+/* Enhanced Button Icons */
+.btn i {
+    margin-right: 0.5rem;
+    transition: var(--transition);
+}
+
+.btn:hover i {
+    transform: scale(1.1);
+}
+
+.btn-primary:hover i {
+    animation: icon-bounce 0.6s ease-in-out;
+}
+
+@keyframes icon-bounce {
+    0%, 100% { transform: scale(1.1); }
+    50% { transform: scale(1.3) rotate(5deg); }
+}
+
+/* Special animations for specific icons */
+.btn:hover .fa-rocket {
+    animation: rocket-launch 0.8s ease-in-out;
+}
+
+.btn:hover .fa-chart-line {
+    animation: chart-bounce 0.8s ease-in-out;
+}
+
+.btn:hover .fa-users {
+    animation: users-pulse 0.8s ease-in-out;
+}
+
+@keyframes rocket-launch {
+    0% { transform: scale(1.1) translateY(0); }
+    50% { transform: scale(1.3) translateY(-5px); }
+    100% { transform: scale(1.1) translateY(0); }
+}
+
+@keyframes chart-bounce {
+    0%, 100% { transform: scale(1.1) rotate(0deg); }
+    25% { transform: scale(1.2) rotate(-5deg); }
+    75% { transform: scale(1.2) rotate(5deg); }
+    50% { transform: scale(1.3) rotate(0deg); }
+}
+
+@keyframes users-pulse {
+    0%, 100% { transform: scale(1.1); }
+    25%, 75% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+}
+
+/* Enhanced timeline emojis */
+.timeline-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mobile responsiveness for new elements */
+@media (max-width: 768px) {
+    .hero-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+        padding: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .floating-elements {
+        display: none; /* Hide on mobile for performance */
+    }
+    
+    .phone-frame {
+        width: 320px;
+        height: 600px;
+    }
+    
+    .phone-home-button {
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .home-button-ring {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    /* Mobile video optimizations */
+    #nokia-video {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .phone-speaker {
+        width: 50px;
+    }
+    
+    .phone-camera {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .community-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .support-quote {
+        padding: 1rem;
+    }
+    
+    .support-quote blockquote {
+        font-size: 1rem;
+    }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    .float-icon,
+    .stat-number,
+    .card-highlight {
+        animation: none;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
 }
 
 /* Custom scrollbar */
